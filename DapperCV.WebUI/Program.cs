@@ -36,6 +36,8 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 });
 
 
+builder.Services.AddAutoMapper(typeof(StartupBase));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -58,6 +60,6 @@ app.MapControllerRoute(
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Default}/{action=Index}/{id?}");
 
 app.Run();

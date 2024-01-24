@@ -1,0 +1,32 @@
+﻿@model List<SocialMediaIconListDto>
+@{
+    ViewData["Title"] = "Sosyal Medya İkon Listesi";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-right mb-2">
+    <a asp-area="Admin" asp-controller="SocialMediaIcon" asp-action="Add" class="btn btn-outline-primary btn-sm mr-1">Ekle</a>
+</div>
+
+
+<table class="table table-hover table-striped">
+    <tr>
+        <th>#</th>
+        <th>İkon Bilgisi</th>
+        <th>Bağlantı Adresi</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Icon</td>
+            <td>@item.Link</td>
+            <td>
+                <a asp-area="Admin" asp-controller="SocialMediaIcon" asp-action="Update" asp-route-id="@item.Id" class="btn btn-outline-info btn-sm mr-1">Güncelle</a>
+                <a asp-area="Admin" asp-controller="SocialMediaIcon" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm" onclick="retunr confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+            </td>
+        </tr>
+    }
+</table>
+

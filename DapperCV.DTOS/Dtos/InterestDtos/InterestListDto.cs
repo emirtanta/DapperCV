@@ -13,7 +13,8 @@ namespace DapperCV.DTOS.Dtos.InterestDtos
         [Key]
         public int Id { get; set; }
 
-        [StringLength(1000)]
-        public string Descripiton { get; set; }
+        [StringLength(50)]
+        [Display(Name = "Hobi Adı")]
+        public string Name { get; set; }
     }
 }

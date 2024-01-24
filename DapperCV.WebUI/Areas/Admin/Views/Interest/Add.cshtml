@@ -1,0 +1,20 @@
+﻿@model InterestAddDto
+@{
+    ViewData["Title"] = "Hobi Ekle";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="Add" method="post">
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="@Model.Name" class="form-control" />
+        <span asp-validation-for="@Model.Name" class="text-center"></span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-primary btn-sm">Kaydet</button>
+    </div>
+
+</form>
+

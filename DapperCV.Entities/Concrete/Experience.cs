@@ -1,4 +1,4 @@
-﻿using DapperCV.DTOS.Interfaces;
+﻿using DapperCV.Entities.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,9 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DapperCV.DTOS.Dtos.ExprerienceDtos
+namespace DapperCV.Entities.Concrete
 {
-    public class ExprerienceUpdateDto:IDto
+    [Dapper.Contrib.Extensions.Table("Expreriences")]
+    public class Experience:ITable
     {
         [Key]
         public int Id { get; set; }

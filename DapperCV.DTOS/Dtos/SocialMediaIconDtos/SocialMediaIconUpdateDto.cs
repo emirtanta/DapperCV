@@ -13,11 +13,14 @@ namespace DapperCV.DTOS.Dtos.SocialMediaIconDtos
         public int Id { get; set; }
 
         [StringLength(500)]
+        [Display(Name ="Bağlantı Adresi")]
         public string? Link { get; set; }
 
         [StringLength(100)]
+        [Display(Name ="İkon")]
         public string? Icon { get; set; }
 
+        [Display(Name ="Kullanıcı")]
         public int AppUserId { get; set; }
     }
 }

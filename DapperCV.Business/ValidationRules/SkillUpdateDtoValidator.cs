@@ -15,7 +15,7 @@ namespace DapperCV.Business.ValidationRules
     {
         public SkillUpdateDtoValidator()
         {
-            RuleFor(x=>x.Description).NotEmpty().WithMessage("Açıklama boş geçilemez");
+            RuleFor(x=>x.Name).NotEmpty().WithMessage("Yetenek adı boş geçilemez");
         }
     }
 }

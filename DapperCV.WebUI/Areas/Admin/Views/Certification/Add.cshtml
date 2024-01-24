@@ -1,0 +1,20 @@
+﻿@model CertificationAddDto
+@{
+    ViewData["Title"] = "Sertifika Ekle";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="Add" method="post">
+
+    <div class="form-group">
+        <label>Sertifika Bilgisi</label>
+        <input asp-for="@Model.Descripiton" class="form-control" />
+        <span asp-validation-for="@Model.Descripiton" class="text-center"></span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-primary btn-sm">Kaydet</button>
+    </div>
+
+</form>
+

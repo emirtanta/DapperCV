@@ -1,0 +1,26 @@
+﻿@model SocialMediaIconAddDto
+@{
+    ViewData["Title"] = "Sosyal Medya Ekle";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="Add" method="post">
+
+    <div class="form-group">
+        <label asp-for="Link"></label>
+        <input asp-for="@Model.Link" class="form-control" />
+        <span asp-validation-for="@Model.Link" class="text-center"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Icon"></label>
+        <input asp-for="@Model.Icon" class="form-control" />
+        <span asp-validation-for="@Model.Icon" class="text-center"></span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-primary btn-sm">Kaydet</button>
+    </div>
+
+</form>
+

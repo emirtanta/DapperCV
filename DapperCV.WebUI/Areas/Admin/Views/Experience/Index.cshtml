@@ -1,0 +1,38 @@
+﻿@model List<ExperienceListDto>
+@{
+    ViewData["Title"] = "Deneyim Listesi";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<<div class="text-right mb-2">
+    <a asp-area="Admin" asp-controller="Experience" asp-action="Add" class="btn btn-outline-primary btn-sm mr-1">Ekle</a>
+</div>
+
+
+<table class="table table-hover table-striped">
+    <tr>
+        <th>#</th>
+        <th>Ünvan</th>
+        <th>Firma</th>
+        <th>Başlangıç Tarihi</th>
+        <th>Bitiş Tarihi</th>
+        <th>Açıklama</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Title</td>
+            <td>@item.SubTitle</td>
+            <td>@item.StartDate</td>
+            <td>@item.EndDate</td>
+            <td>@item.Description</td>
+            <td>
+                <a asp-area="Admin" asp-controller="Experience" asp-action="Update" asp-route-id="@item.Id" class="btn btn-outline-info btn-sm mr-1">Güncelle</a>
+                <a asp-area="Admin" asp-controller="Experience" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm" onclick="retunr confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+            </td>
+        </tr>
+    }
+</table>
+

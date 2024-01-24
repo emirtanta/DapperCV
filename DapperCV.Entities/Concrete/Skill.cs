@@ -15,6 +15,6 @@ namespace DapperCV.Entities.Concrete
         public int Id { get; set; }
 
         [StringLength(200)]
-        public string Description { get; set; }
+        public string Name { get; set; }
     }
 }

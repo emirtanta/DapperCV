@@ -14,14 +14,21 @@ namespace DapperCV.DTOS.Dtos.EducationDtos
         public int Id { get; set; }
 
         [StringLength(100)]
+        [Display(Name = "Eğitim Aldığı Kurum")]
         public string Title { get; set; }
 
         [StringLength(200)]
+        [Display(Name = "Eğitim Alanı")]
         public string SubTitle { get; set; }
 
         [StringLength(1000)]
+        [Display(Name = "Açıklama")]
         public string? Description { get; set; }
+
+        [Display(Name = "Başlangıç Tarihi")]
         public DateTime? StartDate { get; set; }
+
+        [Display(Name = "Bitiş Tarihi")]
         public DateTime? EndDate { get; set; }
     }
 }

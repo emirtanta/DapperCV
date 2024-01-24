@@ -35,14 +35,16 @@ namespace DapperCV.Business.IOC.Microsoft
 
             services.AddScoped<IAppUserRepository, DpAppUserRepository>();
             services.AddScoped<IAppUserService, AppUserManager>();
+            services.AddScoped<ISocialMediaIconRepository, DpSocialMediaIconRepository>();
+            services.AddScoped<ISocialMediaIconService, SocialMediaIconManager>();
 
             services.AddTransient<IValidator<AppUserUpdateDto>, AppUserUpdateDtoValidator>();
             
             services.AddTransient<IValidator<CertificationAddDto>, CertificationAddDtoValidator>();
             services.AddTransient<IValidator<CertificationUpdateDto>, CertificationUpdateDtoValidator>();
 
-            services.AddTransient<IValidator<ExprerienceAddDto>, ExprerienceAddDtoValidator>();
-            services.AddTransient<IValidator<ExprerienceUpdateDto>, ExprerienceUpdateDtoValidator>();
+            services.AddTransient<IValidator<ExperienceAddDto>, ExperienceAddDtoValidator>();
+            services.AddTransient<IValidator<ExperienceUpdateDto>, ExperienceUpdateDtoValidator>();
 
             services.AddTransient<IValidator<EducationAddDto>, EducationAddDtoValidator>();
             services.AddTransient<IValidator<EducationUpdateDto>, EducationUpdateDtoValidator>();
@@ -55,6 +57,9 @@ namespace DapperCV.Business.IOC.Microsoft
 
             services.AddTransient<IValidator<SocialMediaIconAddDto>, SocialMediaIconAddDtoValidator>();
             services.AddTransient<IValidator<SocialMediaIconUpdateDto>, SocialMediaIconUpdateDtoValidator>();
+
+            services.AddTransient<IValidator<AppUserPasswordDto>, AppUserPasswordDtoValidator>();
+            
         }
     }
 }

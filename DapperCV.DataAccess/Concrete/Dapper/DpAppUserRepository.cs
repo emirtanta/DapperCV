@@ -24,5 +24,13 @@ namespace DapperCV.DataAccess.Concrete.Dapper
 
             return user != null;
         }
+
+        public AppUser FindByName(string userName)
+        {
+            return _dbConnection.QueryFirstOrDefault<AppUser>("Select * from AppUsers where=@userName", new
+            {
+                userName = userName
+            });
+        }
     }
 }

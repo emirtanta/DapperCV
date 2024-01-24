@@ -15,14 +15,17 @@
     <div class="d-flex" id="wrapper">
         <!-- Sidebar-->
         <div class="border-end bg-white" id="sidebar-wrapper">
-            <div class="sidebar-heading border-bottom bg-light">Start Bootstrap</div>
+            <div class="sidebar-heading border-bottom bg-light">CV Admin Paneli</div>
             <div class="list-group list-group-flush">
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Dashboard</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Shortcuts</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
+                <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="list-group-item list-group-item-action list-group-item-light p-3 @(TempData["active"]?.ToString()=="bilgilerim"?"active":"")">Bilgilerim</a>
+                <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="list-group-item list-group-item-action list-group-item-light p-3 @(TempData["active"]?.ToString()=="sifre"?"active":"")">Şifre Değişikliği</a>
+                <a asp-area="Admin" asp-controller="Certification" asp-action="Index" class="list-group-item list-group-item-action list-group-item-light p-3 @(TempData["active"]?.ToString()=="sertifika"?"active":"")">Sertifikalarım</a>
+                <a asp-area="Admin" asp-controller="Education" asp-action="Index" class="list-group-item list-group-item-action list-group-item-light p-3 @(TempData["active"]?.ToString()=="egitim"?"active":"")">Eğitim Bilgileri</a>
+                <a asp-area="Admin" asp-controller="Experience" asp-action="Index" class="list-group-item list-group-item-action list-group-item-light p-3 @(TempData["active"]?.ToString()=="deneyim"?"active":"")">Deneyim Bilgileri</a>
+                <a asp-area="Admin" asp-controller="Interest" asp-action="Index" class="list-group-item list-group-item-action list-group-item-light p-3 @(TempData["active"]?.ToString()=="hobi"?"active":"")">Hobilerim</a>
+                <a asp-area="Admin" asp-controller="Interest" asp-action="Index" class="list-group-item list-group-item-action list-group-item-light p-3 @(TempData["active"]?.ToString()=="beceri"?"active":"")">Becerilerim</a>
+                <a asp-area="Admin" asp-controller="SocialMediaIcon" asp-action="Index" class="list-group-item list-group-item-action list-group-item-light p-3 @(TempData["active"]?.ToString()=="ikon"?"active":"")">Sosyal Medya Bağlantıları</a>
+                <a asp-area="" asp-controller="Auth" asp-action="Logout" class="list-group-item list-group-item-action list-group-item-light p-3">Çıkış</a>
             </div>
         </div>
         <!-- Page content wrapper-->
@@ -30,7 +33,7 @@
             <!-- Top navigation-->
             <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                 <div class="container-fluid">
-                    <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+                    <button class="btn btn-outline-primary" id="sidebarToggle">Menü</button>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
@@ -50,7 +53,24 @@
                 </div>
             </nav>
             <!-- Page content-->
-            @RenderBody()
+            
+            <div class="container container-fluid p-3">
+                @{
+                    if (!string.IsNullOrWhiteSpace(TempData["message"]?.ToString()))
+                    {
+                        <div class="alert alert-info alert-dismissible fade show my-2" role="alert">
+                            @TempData["message"].ToString()
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                    }
+                }
+                
+                @RenderBody()
+            </div>
+            
         </div>
     </div>
     <!-- Bootstrap core JS-->

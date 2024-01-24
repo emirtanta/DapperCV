@@ -16,5 +16,12 @@ namespace DapperCV.DataAccess.Interfaces
         /// <param name="password"></param>
         /// <returns></returns>
         bool CheckUser(string userName, string password);
+
+        /// <summary>
+        /// kullanıcıyı isme göre arar
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
+        AppUser FindByName(string userName);
     }
 }

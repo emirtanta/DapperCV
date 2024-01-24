@@ -16,5 +16,12 @@ namespace DapperCV.Business.Interfaces
         /// <param name="password"></param>
         /// <returns></returns>
         bool CheckUserService(string userName, string password);
+
+        /// <summary>
+        /// kullanıcıyı isme göre arar
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
+        AppUser FindByNameService(string userName);
     }
 }

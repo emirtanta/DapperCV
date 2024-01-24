@@ -11,7 +11,8 @@ namespace DapperCV.DTOS.Dtos.InterestDtos
     public class InterestAddDto:IDto
     {
 
-        [StringLength(1000)]
-        public string Descripiton { get; set; }
+        [StringLength(50)]
+        [Display(Name ="Hobi Adı")]
+        public string Name { get; set; }
     }
 }

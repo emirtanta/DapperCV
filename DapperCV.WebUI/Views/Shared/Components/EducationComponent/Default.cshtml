@@ -1,0 +1,32 @@
+﻿@model List<DapperCV.DTOS.Dtos.ExprerienceDtos.ExperienceListDto>
+<section class="resume-section" id="education">
+    @foreach (var item in Model)
+    {
+        <div class="resume-section-content">
+            <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                <div class="flex-grow-1">
+                    <h3 class="mb-0">@item.Title</h3>
+                    <div class="subheading mb-3">@item.SubTitle</div>
+                    <div>@item.Description</div>
+                </div>
+                <div class="flex-shrink-0">
+                    <span class="text-primary">
+                        @(((DateTime)item.EndDate).ToString("Y"))) - @{
+                            if (item.EndDate.HasValue)
+                            {
+                                <span>@(((DateTime)item.EndDate).ToString("Y")))</span>
+                            }
+                            else
+                            {
+                                <span>Devam ediyor</span>
+                            }
+
+                        }
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    }
+    
+</section>

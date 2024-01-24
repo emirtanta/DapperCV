@@ -1,0 +1,45 @@
+﻿@model ExperienceAddDto
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="Add" method="post">
+
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="@Model.Title" class="form-control" />
+        <span asp-validation-for="@Model.Title" class="text-center"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SubTitle"></label>
+        <input asp-for="@Model.SubTitle" class="form-control" />
+        <span asp-validation-for="@Model.SubTitle" class="text-center"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="StartDate"></label>
+        <input asp-for="@Model.StartDate" class="form-control" />
+        <span asp-validation-for="@Model.StartDate" class="text-center"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EndDate"></label>
+        <input asp-for="@Model.EndDate" class="form-control" />
+        <span asp-validation-for="@Model.EndDate" class="text-center"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="@Model.Description" class="form-control" rows="5"></textarea>
+        <span asp-validation-for="@Model.Description" class="text-center"></span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-primary btn-sm">Kaydet</button>
+    </div>
+
+</form>
+
+

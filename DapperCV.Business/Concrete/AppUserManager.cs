@@ -23,5 +23,10 @@ namespace DapperCV.Business.Concrete
         {
             return _appUseerRepository.CheckUser(userName,password);
         }
+
+        public AppUser FindByNameService(string userName)
+        {
+            return _appUseerRepository.FindByName(userName);
+        }
     }
 }

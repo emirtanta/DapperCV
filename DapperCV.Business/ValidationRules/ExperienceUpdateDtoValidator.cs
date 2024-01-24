@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace DapperCV.Business.ValidationRules
 {
-    public class ExprerienceAddDtoValidator : AbstractValidator<ExprerienceAddDto>
+    public class ExperienceUpdateDtoValidator : AbstractValidator<ExperienceUpdateDto>
     {
-        public ExprerienceAddDtoValidator()
+        public ExperienceUpdateDtoValidator()
         {
             RuleFor(x=>x.Title).NotEmpty().WithMessage("Başlık boş geçilemez");
             RuleFor(x=>x.SubTitle).NotEmpty().WithMessage("Alt Başlık boş geçilemez");

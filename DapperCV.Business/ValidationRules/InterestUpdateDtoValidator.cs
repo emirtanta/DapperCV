@@ -16,7 +16,7 @@ namespace DapperCV.Business.ValidationRules
     {
         public InterestUpdateDtoValidator()
         {
-            RuleFor(x=>x.Descripiton).NotEmpty().WithMessage("Açıklama boş geçilemez");
+            RuleFor(x=>x.Name).NotEmpty().WithMessage("Hobi boş geçilemez");
         }
     }
 }

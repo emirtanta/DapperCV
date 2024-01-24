@@ -1,4 +1,4 @@
-﻿using DapperCV.Entities.Interfaces;
+﻿using DapperCV.DTOS.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,23 +6,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DapperCV.Entities.Concrete
+namespace DapperCV.DTOS.Dtos.ExprerienceDtos
 {
-    [Dapper.Contrib.Extensions.Table("Expreriences")]
-    public class Exprerience:ITable
+    public class ExperienceAddDto:IDto
     {
-        [Key]
-        public int Id { get; set; }
 
         [StringLength(100)]
+        [Display(Name ="Ünvan")]
         public string Title { get; set; }
 
         [StringLength(200)]
+        [Display(Name ="Firma")]
         public string SubTitle { get; set; }
 
         [StringLength(1000)]
+        [Display(Name ="Açıklama")]
         public string? Description { get; set; }
+
+        [Display(Name ="Başlangıç tarihi")]
         public DateTime? StartDate { get; set; }
+
+        [Display(Name ="Bitiş Tarihi")]
         public DateTime? EndDate { get; set; }
     }
 }

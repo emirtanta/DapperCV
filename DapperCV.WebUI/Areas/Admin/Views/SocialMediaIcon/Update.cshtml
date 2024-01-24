@@ -1,0 +1,28 @@
+﻿@model SocialMediaIconUpdateDto
+@{
+    ViewData["Title"] = "Sosyal Medya Güncelle";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="Update" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Link"></label>
+        <input asp-for="@Model.Link" class="form-control" />
+        <span asp-validation-for="@Model.Link" class="text-center"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Icon"></label>
+        <input asp-for="@Model.Icon" class="form-control" />
+        <span asp-validation-for="@Model.Icon" class="text-center"></span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-info btn-sm">Güncelle</button>
+    </div>
+
+</form>
+
